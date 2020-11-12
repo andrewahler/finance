@@ -12,18 +12,18 @@
     <div class="cover">
 
         <form class="flex-form">
-    
-          <input type="search" placeholder="Where To Next?">
-    
+          <input type="text" id="startcity" placeholder="Where from?">   
+          <input type="text" id="destinationcity" placeholder="Where To Next?">
+
           <label for="from">From</label>
     
-          <input type="date" name="from">
+          <input type="date" id="startdate" name="from">
     
           <label for="from">To</label>
     
-          <input type="date" name="to">
+          <input type="date" id="enddate" name="to">
     
-          <select name "" id="">
+          <select name= "guest" id="guest">
             <option value="1">1 Guest</option>
             <option value="2">2 Guests</option>
             <option value="3">3 Guests</option>
@@ -36,12 +36,15 @@
             <option value="10">10 Guests</option>
           </select>
     
-          <input type="submit" value="Search">
+          <button type="submit" id="searchBtn">Search</button>
     
         </form>
     
       </div>
+      <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"></script>   
+      <script src="./assets/js/script.js"></script>
 </body>
-
-<script src="./assets/js/script.js"></script>
 </html>
