@@ -1,17 +1,23 @@
-
-
-
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/referral/v1.0/null/null/null/null/null/null/%7Binboundpartialdate%7D?shortapikey=ra66933236979928&apiKey=%7Bshortapikey%7D",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "228a621e74msh789b3a09ca3ee81p17d2e0jsneb2a72df51c0",
-		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
-	}
-};
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
+$(".flex-form").on("submit",function(event){
+    event.preventDefault()
+    var start = $("#startcity").val()
+    var destination = $("#destinationcity").val()
+    var startdate = $("#startdate").val()
+    var enddate = $("#enddate").val()
+    var guest = $("#guest").val()
+    console.log(start,destination,startdate,enddate,guest)
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://priceline-com.p.rapidapi.com/flights/SFO/LAX/2021-02-15/2021-02-25?adults=1",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "228a621e74msh789b3a09ca3ee81p17d2e0jsneb2a72df51c0",
+            "x-rapidapi-host": "priceline-com.p.rapidapi.com"
+        }
+    };
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+})
