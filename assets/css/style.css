@@ -1,40 +1,44 @@
 h1 {
-color: white
-
+  color: white;
+  padding: 150px;
+}
+.text {
+  color: white;
+}
+.date {
+  color: white;
 }
 .flex-form > * {
-	border: 0;
-	padding: 10px;
-	background: white;
-	line-height: 50px;
-	font-size: 20px;
-	border-radius: 0;
-	outline: 1;
-	border-right: 1px solid rgba(0,0,0,0.2);
+  border: 0;
+  padding: 10px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 0;
+  outline: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .flex-form > *:last-child {
-	border-right: 0;
+  border-right: 0;
 }
 
-
 .cover {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	min-height: 100%;
-	min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100%;
+  min-height: 100vh;
 }
 
 .flex-form {
-	display: flex;
-	border: 20px solid rgba(0,0,0,0.3);
-	border-radius: 5px;
+  display: flex;
+  border: 20px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 body {
-    background-image: url("./images/pexels-eberhard-grossgasteiger-1624496.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+  background-image: url("./images/pexels-eberhard-grossgasteiger-1624496.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

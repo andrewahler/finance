@@ -1,50 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Travel</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <div id="todo" style="color: white"></div>
     <div class="cover">
-<h1>Travel Homepage</h1>
-        <form class="flex-form">
-          <input type="text" id="startcity" placeholder="Where from?">   
-          <input type="text" id="destinationcity" placeholder="Where To Next?">
+      <h1>Travel Homepage</h1>
+      <form class="flex-form">
+        <input type="text" id="startcity" placeholder="Where from?" />
+        <input type="text" id="destinationcity" placeholder="Where To Next?" />
 
-          <label for="from">From</label>
-    
-          <input type="date" id="startdate" name="from">
-    
-          <label for="from">To</label>
-    
-          <input type="date" id="enddate" name="to">
-    
-          <select name= "guest" id="guest">
-            <option value="1">1 Guest</option>
-            <option value="2" default>2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5">5 Guests</option>
-            <option value="6">6 Guests</option>
-            <option value="7">7 Guests</option>
-            <option value="8">8 Guests</option>
-            <option value="9">9 Guests</option>
-            <option value="10">10 Guests</option>
-          </select>
-    
-          <button type="submit" id="searchBtn">Search</button>
-    
-        </form>
-    
-      </div>
-      <script
+        <label for="from">From</label>
+
+        <input type="date" style="color: white;" id="startdate" name="from" />
+
+        <label for="from">To</label>
+
+        <input type="date" style="color: white;" id="enddate" name="to" />
+
+        <select name="guest" id="guest">
+          <option value="1">1 Guest</option>
+          <option value="2" default>2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5">5 Guests</option>
+          <option value="6">6 Guests</option>
+          <option value="7">7 Guests</option>
+          <option value="8">8 Guests</option>
+          <option value="9">9 Guests</option>
+          <option value="10">10 Guests</option>
+        </select>
+
+        <button type="submit" id="searchBtn">Search</button>
+      </form>
+    </div>
+    <div id="startdate"></div>
+
+    <div id="destinationcity"></div>
+    <div class="container" id="airlineinfo">
+        <h2 style="color: white;">Airport</h2>
+        <table>
+            <tbody id="ap"></tbody>
+        </table>
+        <h2 style="color: white;">Airline</h2>
+        <table>
+           <thead>
+               <tr>
+                   <th style="color: white;">airline</th>
+                   <th style="color: white;">lowest cost</th>
+               </tr>
+           </thead> <tbody id="al"></tbody>
+        </table>
+        <h2 style="color: white;">Options</h2>
+        <table>
+            <tbody id="opt"></tbody>
+        </table>
+    </div>
+    <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"></script>   
-      <script src="./assets/js/script.js"></script>
-</body>
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
