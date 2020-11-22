@@ -57,3 +57,70 @@ htmlcode+=`<tr>
   });
 
 });
+window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+  
+    return t;
+  }(document, "script", "twitter-wjs"));
+  
+  
+  function clickEventToAnalytics (intentEvent) {
+    if (!intentEvent) return;
+    var label = intentEvent.region;
+    pageTracker._trackEvent('twitter_web_intents', intentEvent.type, label);
+  }
+  
+  function tweetIntentToAnalytics (intentEvent) {
+    if (!intentEvent) return;
+    var label = "tweet";
+    pageTracker._trackEvent(
+      'twitter_web_intents',
+      intentEvent.type,
+      label
+    );
+  }
+  
+  function likeIntentToAnalytics (intentEvent) {
+    tweetIntentToAnalytics(intentEvent);
+  }
+  
+  function retweetIntentToAnalytics (intentEvent) {
+    if (!intentEvent) return;
+    var label = intentEvent.data.source_tweet_id;
+    pageTracker._trackEvent(
+      'twitter_web_intents',
+      intentEvent.type,
+      label
+    );
+  }
+  
+  function followIntentToAnalytics (intentEvent) {
+    if (!intentEvent) return;
+    var label = intentEvent.data.user_id + " (" + intentEvent.data.screen_name + ")";
+    pageTracker._trackEvent(
+      'twitter_web_intents',
+      intentEvent.type,
+      label
+    );
+  }
+  
+ 
+  twttr.ready(function (twttr) {
+   
+    twttr.events.bind('click', clickEventToAnalytics);
+    twttr.events.bind('tweet', tweetIntentToAnalytics);
+    twttr.events.bind('retweet', retweetIntentToAnalytics);
+    twttr.events.bind('like', likeIntentToAnalytics);
+    twttr.events.bind('follow', followIntentToAnalytics);
+  });

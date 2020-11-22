@@ -1,6 +1,6 @@
 h1 {
   color: white;
-  padding: 150px;
+  padding: 75px
 }
 .text {
   color: white;
@@ -41,4 +41,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+tr {
+    color: white;
+}
+h5 {
+color: white;
+
+}
+h6  {
+color: white;
+}
+button {
+color: yellowgreen
 }
