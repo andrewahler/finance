@@ -57,6 +57,12 @@ htmlcode+=`<tr>
   });
 
 });
+twttr.events.bind(
+    'click',
+    function (ev) {
+      console.log(ev);
+    }
+  );
 window.twttr = (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],
       t = window.twttr || {};
@@ -74,7 +80,7 @@ window.twttr = (function(d, s, id) {
     return t;
   }(document, "script", "twitter-wjs"));
   
-  
+  // Define our custom event handlers
   function clickEventToAnalytics (intentEvent) {
     if (!intentEvent) return;
     var label = intentEvent.region;
@@ -115,9 +121,9 @@ window.twttr = (function(d, s, id) {
     );
   }
   
- 
+  // Wait for the asynchronous resources to load
   twttr.ready(function (twttr) {
-   
+    // Now bind our custom intent events
     twttr.events.bind('click', clickEventToAnalytics);
     twttr.events.bind('tweet', tweetIntentToAnalytics);
     twttr.events.bind('retweet', retweetIntentToAnalytics);
